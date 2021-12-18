@@ -3,14 +3,4 @@
 .o
 .so
 .obj
-
-# CMake
-*/CMakeCache.txt
-*/cmake_install.cmake
-*/Makefile
-*/CMakeFiles
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-CMakeFiles
-compilae_commands.json
+build/*
