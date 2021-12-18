@@ -14,9 +14,15 @@ Step by step guide:
 1. Navigate to the directory which contains the solution source code.
 2. Run g++ <input_file> -o solution.exe \
 This will compile to an executable `solution.exe`
-```console
+```ShellSession
 user@computer:~/AoC2021Templates$ cd Day1
 user@computer:~/AoC2021Templates/Day1$ g++ solution.cpp -o solution.exe
+```
+Now we have `solution.exe`, we can run it and pipe in the input file.
+```ShellSession
+user@computer:~/AoC2021Templates/Day1$ ./solution.exe < test.txt
+Depths: [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
+Solution: 0
 ```
 
 ### Using CMake
