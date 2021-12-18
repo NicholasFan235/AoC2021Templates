@@ -14,7 +14,7 @@ Step by step guide:
 1. Navigate to the directory which contains the solution source code.
 2. Run g++ <input_file> -o solution.exe \
 This will compile to an executable `solution.exe`
-```shell
+```console
 user@computer:~/AoC2021Templates$ cd Day1
 user@computer:~/AoC2021Templates/Day1$ g++ solution.cpp -o solution.exe
 ```
