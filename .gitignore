@@ -3,4 +3,3 @@
 *.o
 *.so
 *.obj
-build/*
