@@ -26,6 +26,42 @@ Solution: 0
 ```
 
 ### Using CMake
+To Compile using CMake, navigate to the build directory, configure cmake and then run cmake build. This will build all the days' solutions to an executable inside the Day* folder.
+```ShellSession
+user@computer:~/AoC2021Templates$ cd build
+user@computer:~/AoC2021Templates/build$ cmake ..
+user@computer:~/AoC2021Templates/build$ cmake --build . --target all
+
+user@computer:~/AoC2021Templates/build$ cd ../Day1
+user@computer:~/AoC2021Templates/Day1$ ./solution.exe < test.txt
+Depths: [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
+Solution: 0
+```
+
+To compile in Debug mode:
+```ShellSession
+user@computer:~/AoC2021Templates$ cd build
+user@computer:~/AoC2021Templates/build$ cmake .. -DCMAKE_BUILD_TYPE=Debug
+user@computer:~/AoC2021Templates/build$ cmake --build . --target all
+```
+
+The CMake files for this project have sanitizer and static analyzer options. The most useful sanitizer will probably be the address sanitizer which will print more information about segmentation faults, including the line on which they occur.
+```ShellSession
+user@computer:~/AoC2021Templates$ cd build
+user@computer:~/AoC2021Templates/build$ cmake .. -DCMAKE_BUILD_TYPE=Debug -DENABLE_SANITISER_ADDRESS=TRUE
+user@computer:~/AoC2021Templates/build$ cmake --build . --target all
+```
+
+Instead of building all targets, it's possible to specify specific source files to compile. The target names are all formatted as `Day#-<source_file>`.
+
+For example, to build only `Day1/solution.cpp`, we can run:
+
+```ShellSession
+user@computer:~/AoC2021Templates$ cd build
+user@computer:~/AoC2021Templates/build$ cmake .. -DCMAKE_BUILD_TYPE=Debug -DENABLE_SANITISER_ADDRESS=TRUE
+user@computer:~/AoC2021Templates/build$ cmake --build . --target Day1-solution
+```
+
 
 ## Print Helpers
 `print_helpers.hpp` is a header file with some overloads for `std::ostream operator<<`. This is to allow for easy printing of common datatypes such as `std::vector`. Once this `print_helpers.hpp` is included, we can simply pipe common standard structures to console using:
