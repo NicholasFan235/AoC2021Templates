@@ -2,7 +2,7 @@
 
 This Repository contains C++ templates for 2021 Advent of Code. The templates are meant to help beginners to C++ with writing solutions by providing a framework which reads in the data.
 
-The template reads in from standard input (`std::cin`), stores the input in global variables then calls `solve()`. This `solve()` function is what should be modified to solve the problem.
+The template reads in from standard input (`std::cin`), stores the input in global variables before calling `solve()`. This `solve()` function is where users should write their solution to the Advent of Code problem.
 
 ## Building the Solution
 ### Basic Compilation on Linux
