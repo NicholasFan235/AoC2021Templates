@@ -27,3 +27,16 @@ Solution: 0
 
 ### Using CMake
 
+## Print Helpers
+`print_helpers.hpp` is a header file with some overloads for `std::ostream operator<<`. This is to allow for easy printing of common datatypes such as `std::vector`. Once this `print_helpers.hpp` is included, we can simply pipe common standard structures to console using:
+```cpp
+#include "print_helpers.hpp"
+#include <iostream>
+
+int main()
+{
+    std::vector<int> vector = std::vector<int>(10);
+    std::cout << "Print a Vector: " << vector << std::endl;
+}
+```
+`print_helpers.hpp` allows printing `std::vector`, `std::array`, `std::pair`, `std::map`, `std::unordered_map`, `std::set`, `std::unordered_set`.
